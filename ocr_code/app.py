@@ -9,7 +9,7 @@ import numpy as np
 ocr = PaddleOCR(use_angle_cls=True, lang='en', det_db_score_mode='fast')  # Use 'fast' for quicker but less accurate or 'accurate' for better quality
 
 # Path to the image you want to test
-image_path = '../images/43.jpeg'
+image_path = '../images/download.jpeg'
 image = cv2.imread(image_path)
 
 if image is None:
@@ -71,7 +71,7 @@ else:
     image_with_boxes = draw_ocr(image, boxes, txts, scores, font_path=font_path)
 
     # Save the result image
-    cv2.imwrite("43.png", image_with_boxes)
+    cv2.imwrite("download.png", image_with_boxes)
 
     # Display the result using matplotlib
     img = cv2.cvtColor(image_with_boxes, cv2.COLOR_BGR2RGB)
