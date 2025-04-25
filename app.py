@@ -54,7 +54,7 @@ def preprocess_variants(img):
 
 # --- OCR SETUP ---
 ocr = PaddleOCR(use_angle_cls=True, lang='en', det_db_score_mode='fast', layout=True)
-image_path = 'images/6.jpeg'
+image_path = 'images/download.jpeg'
 image = cv2.imread(image_path)
 if image is None:
     print("🚫 Error: Image not found.")
@@ -88,7 +88,7 @@ scores = [item[1][1] for item in final_results]
 font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 image_with_boxes = draw_ocr(image, boxes, txts, scores, font_path=font_path)
 
-output_path = "ocr_code/6ensemble_ocr.png"
+output_path = "ocr_code/downloadensemble_ocr.png"
 cv2.imwrite(output_path, image_with_boxes)
 
 # --- DISPLAY ---
